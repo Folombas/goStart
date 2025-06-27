@@ -24,12 +24,25 @@ func main() {
 	// rune (uint32) для UTF-8 символов
 	var someChinese rune = '好'
 
-	helloWord := "Привет, мир!"
+	helloWord := "Привет Мир"
 	// конкатенация строк
 	andGoodMorning := helloWord + " и доброе утро!"
 
+	// строки неизменяемы
+	// cannot assign to helloWord[0]
+	helloWord[0] = 72
+
 	// получение длины строки
-	byteLen := len(helloWord)
-	symbols := utf8.RuneCountInString(helloWord)
+	byteLen := len(helloWord)						// 19 bytes
+	symbols := utf8.RuneCountInString(helloWord) 	// 12 runes
+
+	// получение подстроки, в байтах, не символах!
+	hello := helloWorld[:12] // Привет, 0-11 байты
+	H := helloWorld[0]		// byte, 72, не "П"	
+
+	// конвертация в слайс байт и обратно
+	byteString = []byte(helloWorld)
+	helloWorld = string(byteString)
+
 
 }
