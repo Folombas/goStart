@@ -20,14 +20,10 @@ func main() {
 	var rawBinary byte = '\x27'
 
 	// rune (uint32) для UTF-8 символов
-	var someChinese rune = '世'
-	var someKorean rune = '세'
-	var someJapanese rune = 'こ'
-	var someArabic rune = 'س'
-	var someHebrewe rune = 'ש'
-	var someGreek rune = 'α'
-	var someAfrican rune = 'ድ'
-	var someBengali rune = 'শ'
-
+	var someChinese rune = '好'
+	
+	helloWord := "Привет, мир!"
+	// конкатенация строк
+	andGoodMorning := helloWord + " и доброе утро!"
 
 }
