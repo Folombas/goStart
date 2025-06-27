@@ -1,6 +1,8 @@
 package strings
 
-import "fmt"
+import (
+	"unicode/utf8"
+)
 
 func main() {
 	// пустая строка по-умолчанию
@@ -21,9 +23,13 @@ func main() {
 
 	// rune (uint32) для UTF-8 символов
 	var someChinese rune = '好'
-	
+
 	helloWord := "Привет, мир!"
 	// конкатенация строк
 	andGoodMorning := helloWord + " и доброе утро!"
+
+	// получение длины строки
+	byteLen := len(helloWord)
+	symbols := utf8.RuneCountInString(helloWord)
 
 }
