@@ -1,12 +1,14 @@
 package strings
 
 import (
+	"fmt"
 	"unicode/utf8"
 )
 
 func main() {
 	// пустая строка по-умолчанию
 	var str string
+	str = "This is a string"
 
 	// со спец символами
 	var hello string = "Привет\n\t"
@@ -24,25 +26,26 @@ func main() {
 	// rune (uint32) для UTF-8 символов
 	var someChinese rune = '好'
 
-	helloWord := "Привет Мир"
+	helloWord = "Привет Мир"
 	// конкатенация строк
 	andGoodMorning := helloWord + " и доброе утро!"
 
 	// строки неизменяемы
 	// cannot assign to helloWord[0]
-	helloWord[0] = 72
+	// helloWord[0] := 72
 
 	// получение длины строки
 	byteLen := len(helloWord)						// 19 bytes
 	symbols := utf8.RuneCountInString(helloWord) 	// 12 runes
 
-	// получение подстроки, в байтах, не символах!
-	hello := helloWorld[:12] // Привет, 0-11 байты
-	H := helloWorld[0]		// byte, 72, не "П"	
-
-	// конвертация в слайс байт и обратно
-	byteString = []byte(helloWorld)
-	helloWorld = string(byteString)
-
-
+	fmt.Println(str)
+	fmt.Println(hello)
+	fmt.Println(world)
+	fmt.Println(hi)
+	fmt.Println(rawBinary)
+	fmt.Println(someChinese)
+	fmt.Println(andGoodMorning)
+	fmt.Println(byteLen)
+	fmt.Println(symbols)
+	fmt.Println(hello)
 }
