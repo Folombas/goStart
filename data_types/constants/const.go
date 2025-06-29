@@ -10,7 +10,9 @@ const (
 const (
 	zero  = iota
 	_     // пустаяя переменная, пропуск iota
-	three // = 3
+	one 	// = 1
+	two 	// = 2
+	three 	// = 3
 )
 const (
 	_         = iota             // пропускаем первое значение
