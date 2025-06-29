@@ -4,7 +4,7 @@ import "fmt"
 
 const pi = 3.141
 const (
-	hello = "Привет"
+	hello = "Привет, изучай Go!"
 	e     = 2.718
 )
 const (
