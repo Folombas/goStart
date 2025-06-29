@@ -5,7 +5,7 @@ import (
 	"unicode/utf8"
 )
 
-func main() {
+func DemoStrings() {
 	// пустая строка по-умолчанию
 	var str string
 	str = "This is a string"
@@ -48,4 +48,5 @@ func main() {
 	fmt.Println(byteLen)
 	fmt.Println(symbols)
 	fmt.Println(hello)
+	fmt.Println("Начинаем ежедневное изучение языка программирования Go!")
 }
