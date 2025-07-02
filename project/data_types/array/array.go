@@ -8,7 +8,7 @@ func main() {
 	// инициализация значениями по-умолчанию
 	var a1 [3]int // [0, 0, 0]
 	fmt.Println("a1 short", a1)
-	fmt.Println("a1 short %v\n", a1)
+	fmt.Printf("a1 short %v\n", a1)
 	fmt.Printf("a1 full %#v\n", a1)
 
 	const size = 2
@@ -21,4 +21,5 @@ func main() {
 
 	// проверка при компиляции или при выполнении
 	// invalid array index 4 (out of bounds for 3-element array)
+	// a3[idx] = 12
 }
