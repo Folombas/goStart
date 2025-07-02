@@ -2,7 +2,7 @@ package loop
 
 import "fmt"
 
-func main() {
+func DemoLoop() {
 	// простое условие
 	boolVal := true
 	if boolVal {
