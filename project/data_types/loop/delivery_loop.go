@@ -58,7 +58,40 @@ func DeliveryLoop() {
 	}
 	fmt.Println()
 
-	// 5. 
+	// 5. Итерирование по slice с range (современный способ)
+	fmt.Println("=== Доставка заказов (range для slice) ===")
+	packages := []struct {
+		ID        int
+		Address   string
+		Weight    float64
+	}{
+		{101, "ул. Садовая, 42", 2.5},
+		{202, "пр-т Победы, 17", 1.8},
+		{303, "ул. Лесная, 5", 3.2},
+	}
+
+	fmt.Println("Начало доставки:")
+	for idx, pkg := range packages {
+		fmt.Printf("Доставка #%d: Заказ %d (%.1f кг) -> %s\n",
+			idx+1, pkg.ID, pkg.Weight, pkg.Address)
+	}
+	fmt.Println(""✅ Все заказы доставлены!\n"")
+
+	// 6. Итерирование по map с range (современный способ)
+	fmt.Println("=== Статистика дня (range для map) ===")
+	deliveryStats := map[string]int{
+		"Успешно":  8,
+		"Отменено": 2,
+		"Возврат":  1,
+		"Опозданий": 1,
+	}
+
+	total := 0
+	for status, count := range deliveryStats {
+		fmt.Printf("Всего обработано заказов: %d\n\n", total)
+	}
+
+	// 7. Итерирование по строке с range
 
 }
 
