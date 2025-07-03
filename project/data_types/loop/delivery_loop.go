@@ -103,5 +103,11 @@ func DeliveryLoop() {
 	}
 	fmt.Println("\n⚠️ Проблема: кириллица и символ 'к' обрабатываются некорректно")
 
+	// 7.2 Правильный подход: итерация по рунам
+	fmt.Print("\nСимволы (по рунам): ")
+	for idx, runeValue := range address {
+		fmt.Printf("%c(%d) ", runeValue, idx)
+	}
+
 }
 
