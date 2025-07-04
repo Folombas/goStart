@@ -9,7 +9,7 @@ func DemoLoop() {
 		break
 	}
 
-	// цикл без условия, while(isRun)
+	// цикл с одиночным условием, while(isRun)
 	isRun := true
 	for isRun {
 		fmt.Println("loop iteration with condition")

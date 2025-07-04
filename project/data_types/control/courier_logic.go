@@ -19,7 +19,7 @@ func CourierLogic(){
 	// 2. Условие с блоком инициализации - Проверка заказа
 	fmt.Println("\n=== Проверка заказа ===")
 	if weight := rand.Intn(15) + 1; weight > 10 {
-		fmt.Println("⚠️ Внимание! Тяжелый груз (%d кг). Возьмите рюкзак\n", weight)
+		fmt.Printf("⚠️ Внимание! Тяжелый груз (%d кг). Возьмите рюкзак\n", weight)
 	} else if weight > 5 {
 		fmt.Printf("🛒 Средний вес (%d кг). Курьерская сумка подойдет\n", weight)
 	} else {
