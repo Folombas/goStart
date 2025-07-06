@@ -39,7 +39,7 @@ func MultipleNamedReturn(ok bool) (rez int, err error) {
 	return
 }
 
-// не фиксированное количество  параметров
+// не фиксированное количество  параметров (variadic functions)
 func Sum(in ...int) (result int) {
 	fmt.Printf("in := %#v \n", in)
 	for _, val := range in {
