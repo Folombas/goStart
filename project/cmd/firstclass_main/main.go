@@ -10,6 +10,8 @@ func main() {
 	fmt.Println("========================================")
 
 	firstclass.DoNothing()
+	firstclass.FuncAnonymous()
+	firstclass.CallbackFunc()
 
 	fmt.Println("========================================")
 	fmt.Println("🎉 Программа успешно завершена!")

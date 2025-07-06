@@ -14,8 +14,20 @@ func FuncAnonymous() {
 	}("nobody	")
 }
 
-// // Присваивание анонимной функции в переменную
-// printer := func(in string) {
-// 	fmt.Println("printer outs:", in)
-// }
-// printer("as variable")
+func CallbackFunc() {
+	// присваивание анонимной функции в переменную
+	printer := func(in string) {
+		fmt.Println("printer outs:", in)
+	}
+	printer("as variable")
+
+
+// Определяем тип функции
+type strFuncType func(string)
+
+// Функция принимает коллбек
+worker := func(callback strFuncType) {
+	callback("as callback")
+}
+worker(printer)
+}
