@@ -22,12 +22,22 @@ func CallbackFunc() {
 	printer("as variable")
 
 
-// Определяем тип функции
-type strFuncType func(string)
+	// Определяем тип функции
+	type strFuncType func(string)
 
-// Функция принимает коллбек
-worker := func(callback strFuncType) {
-	callback("as callback")
+	// Функция принимает коллбек
+	worker := func(callback strFuncType) {
+		callback("as callback")
+	}
+	worker(printer)
+
+	// Функция возвращает замыкание
+	prefixer := func(prefix string) strFuncType {
+		return func(in string) {
+			fmt.Printf("[%s] %s\n", prefix, in)
+		}
+	}
+	successLogger := prefixer("SUCCESS")
+	successLogger("expected behaviour")
 }
-worker(printer)
-}
+
