@@ -33,11 +33,15 @@ func (sl *MySlice) Add(val int) {
 	*sl = append(*sl, val)
 }
 
+func (sl *MySlice) Count() int {
+	return len(*sl)
+}
+
 func DemoMethods() {
 	pers := Person{1, "Gosha"}
 	pers.SetName("Gosha Golang")
 	// (&pers).SetName("Gosha Golang")
-	fmt.Printf("updated person: %#v\n", pers)
+	// fmt.Printf("updated person: %#v\n", pers)
 
 	var acc Account = Account{
 		Id:   1,
@@ -51,5 +55,9 @@ func DemoMethods() {
 	acc.SetName("golang.gosha")
 	acc.Person.SetName("Test")
 
-	fmt.Printf("%#v\n", acc)
+	// fmt.Printf("%#v\n", acc)
+
+	sl := MySlice([]int{1, 2})
+	sl.Add(5)
+	fmt.Println(sl.Count(), sl)
 }
