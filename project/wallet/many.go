@@ -41,3 +41,23 @@ func (c *Card) Pay(amount int) error {
 // ------------------
 // И есть ещё Apple Pay
 
+type AplplePay struct {
+	Money int
+	AppleID string
+}
+
+func (a *AplplePay) Pay(amount int) error {
+	if a.Money < amount {
+		return fmt.Errorf("Не хватает денег на аккаунте")
+	}
+	a.Money -= amount
+	return nil
+}
+
+// ------------------
+// Ну и также наш интерфейс "Плательщик" (Payer)
+type Payer interface {
+	Pay(int) error
+}
+
+// ------------------
