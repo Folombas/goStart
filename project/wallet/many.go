@@ -1,4 +1,4 @@
-package basic
+package wallet
 
 import "fmt"
 
@@ -41,12 +41,12 @@ func (c *Card) Pay(amount int) error {
 // ------------------
 // И есть ещё Apple Pay
 
-type AplplePay struct {
+type ApplePay struct {
 	Money int
 	AppleID string
 }
 
-func (a *AplplePay) Pay(amount int) error {
+func (a *ApplePay) Pay(amount int) error {
 	if a.Money < amount {
 		return fmt.Errorf("Не хватает денег на аккаунте")
 	}
@@ -55,9 +55,21 @@ func (a *AplplePay) Pay(amount int) error {
 }
 
 // ------------------
-// Ну и также наш интерфейс "Плательщик" (Payer)
+// Ну и также наш интерфейс "Плательщик" (Payer),
+// который требует только, чтобы был метод Pay
 type Payer interface {
 	Pay(int) error
+}
+
+// ------------------
+// И функция "Купить" (Buy)
+func Buy(p Payer) {
+	err := p.Pay(10)
+	if err != nil {
+		fmt.Printf("Ошибка при оплате %T: %v\n\n", p, err)
+		return
+	}
+	fmt.Printf("Спасибо за покупку через %T\n\n", p)
 }
 
 // ------------------
