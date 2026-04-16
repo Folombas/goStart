@@ -12,7 +12,7 @@ type Wallet struct {
 
 func (w *Wallet) Pay(amount int) error {
 	if w.Cash < amount {
-		return fmt.Errorf("Не хватает денег в кошельке")
+		return fmt.Errorf("Не хватает денег на балансе")
 	}
 	w.Cash -= amount
 	return nil
